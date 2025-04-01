@@ -1,0 +1,704 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>My Profile</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-transparentGray { background-color: undefined; }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1c878e0a-8fb0-808b-a7bf-f99b19f9976b" class="page sans"><header><h1 class="page-title">My Profile</h1><p class="page-description"></p></header><div class="page-body"><p id="1c878e0a-8fb0-8070-a070-f1d06fdcef82" class="">
+</p><h1 id="1c878e0a-8fb0-8006-a99b-daf6123d23e0" class=""><mark class="highlight-blue"><strong>Saad Asif</strong></mark></h1><h3 id="1c878e0a-8fb0-80a6-b61e-fbbac7c0b146" class=""><em>Senior Machine Learning Engineer | AI Strategist | Generative AI Practitioner</em></h3><p id="1c878e0a-8fb0-8075-8106-eccc283a9b8d" class="">
+</p><hr id="1c878e0a-8fb0-8049-acc9-fd5a85e6fcd8"/><h2 id="1c878e0a-8fb0-8000-861e-cb05e8546c79" class="">🔗 Contact &amp; Links</h2><ul id="1c878e0a-8fb0-8003-9311-f239050f8f21" class="bulleted-list"><li style="list-style-type:disc">📍 <strong>Location:</strong> New Delhi, India</li></ul><ul id="1c878e0a-8fb0-80af-b902-c4f6ff775e0e" class="bulleted-list"><li style="list-style-type:disc">📧 <strong>Email:</strong> <a href="mailto:asif.saad19@gmail.com">asif.saad19@gmail.com</a></li></ul><ul id="1c878e0a-8fb0-8081-9211-cf84a183760a" class="bulleted-list"><li style="list-style-type:disc">📞 <strong>Phone:</strong> +91 9956-218-960</li></ul><ul id="1c878e0a-8fb0-8021-85c8-d7c4d50ba276" class="bulleted-list"><li style="list-style-type:disc">💼 <strong>LinkedIn:</strong> <a href="http://linkedin.com/in/saad-asif-a31aa1149">linkedin.com/in/saad-asif-a31aa1149</a></li></ul><ul id="1c878e0a-8fb0-80fb-8731-e121c308f5ec" class="bulleted-list"><li style="list-style-type:disc">💻 <strong>GitHub:</strong> <a href="https://github.com/asifsaad">github.com/asifsaad</a></li></ul><p id="1c878e0a-8fb0-8073-ba81-f81be2d4aea5" class="">
+</p><hr id="1c878e0a-8fb0-8083-b7fe-f64e8aef3af5"/><p id="1c878e0a-8fb0-8024-8ffa-e07beb0abb4c" class="">
+</p><h2 id="1c878e0a-8fb0-80cb-8401-ff25f0d3e4df" class="">🌟 About Me</h2><p id="1c878e0a-8fb0-800e-85a1-d5ad915a8d52" class="">With over 8 years of cross-functional experience at the intersection of data science, machine learning engineering, and product innovation, I specialize in designing, deploying, and scaling end-to-end AI/ML systems. My current passion lies in developing production-ready <strong>Large Language Model (LLM)</strong> applications and optimizing generative AI systems for real-world impact.</p><p id="1c878e0a-8fb0-8021-bea9-f2952c4c482f" class="">I thrive on transforming abstract problems into practical, scalable solutions—whether it’s building Retrieval-Augmented Generation (RAG) pipelines, deploying predictive models across cloud platforms, or accelerating inference through ONNX and CUDA. My approach blends deep technical proficiency with a strong product mindset, enabling data-driven innovation at enterprise scale.</p><hr id="1c878e0a-8fb0-803a-ae0b-ca8b15a816cc"/><h2 id="1c878e0a-8fb0-8005-9c19-dbd15ad5fe35" class="">🧠 What I Do Best</h2><ul id="1c878e0a-8fb0-8068-aaec-c79d45c923b2" class="bulleted-list"><li style="list-style-type:disc"><strong>LLM Fine-tuning &amp; Prompt Engineering</strong><p id="1c878e0a-8fb0-802f-a2f6-d66d981fce77" class="">Mastery over HuggingFace, PyTorch, and LangChain to build custom AI assistants, chatbots, and pipelines with real-time, context-aware response generation.</p></li></ul><ul id="1c878e0a-8fb0-8079-916c-da0a25ea3e90" class="bulleted-list"><li style="list-style-type:disc"><strong>AI/ML System Design &amp; Deployment</strong><p id="1c878e0a-8fb0-80fc-80af-dd4627256969" class="">Architecting robust MLOps workflows, automating model lifecycle (CI/CD), and integrating scalable APIs using Docker, MLFlow, and vector databases like FAISS and Pinecone.</p></li></ul><ul id="1c878e0a-8fb0-8016-9b7d-f0f76dadaa90" class="bulleted-list"><li style="list-style-type:disc"><strong>Inference Optimization &amp; Low Latency</strong><p id="1c878e0a-8fb0-801b-a09a-f076e1a48f5b" class="">Pushing the limits of real-time AI via ONNX Runtime, model quantization, CUDA, and multi-GPU inference strategies.</p></li></ul><ul id="1c878e0a-8fb0-8098-a580-e5ff31313771" class="bulleted-list"><li style="list-style-type:disc"><strong>Applied Data Science Solutions</strong><p id="1c878e0a-8fb0-8090-80cc-f620ecc34db5" class="">From credit risk scoring and facial recognition to warehouse optimization and pricing strategies, I’ve delivered measurable business results across fintech, manufacturing, and logistics.</p><p id="1c878e0a-8fb0-8023-9a89-ee868e138850" class="">
+</p><p id="1c878e0a-8fb0-804d-80d2-d3917f2b8d2b" class="">
+</p></li></ul><hr id="1c878e0a-8fb0-8045-a16a-ee97ea269827"/><h2 id="1c878e0a-8fb0-80e5-826e-d9d37f12e61d" class="">🚀 Career Milestones</h2><h3 id="1c878e0a-8fb0-8077-89bc-ee4157ce76c2" class="">🔹 <strong>Independent R&amp;D: Generative AI &amp; LLM Projects</strong></h3><p id="1c878e0a-8fb0-8099-95b9-f93b69d472a7" class=""><strong>Aug 2023 – Present</strong></p><ul id="1c878e0a-8fb0-8053-aa8a-ead816d00bc5" class="bulleted-list"><li style="list-style-type:disc">Developed a <strong>Retrieval-Augmented Generation (RAG) pipeline</strong> with LangChain, Pinecone, and Streamlit to process proprietary data and generate contextual responses.</li></ul><ul id="1c878e0a-8fb0-80c4-875c-ccd3883e03a4" class="bulleted-list"><li style="list-style-type:disc">Implemented <strong>inference optimization</strong> strategies using ONNX, PyTorch, and CUDA—cutting inference latency by up to 30%.</li></ul><p id="1c878e0a-8fb0-808d-9ad2-ca7bc048ec6f" class="">
+</p><h3 id="1c878e0a-8fb0-80fd-803e-c1ae832b0c07" class="">🔹 <strong>First Meridian (Kaizen Analytix), Hyderabad</strong> — <em>Senior Data Scientist</em></h3><p id="1c878e0a-8fb0-8025-b64d-e20630b03187" class=""><strong>Oct 2021 – July 2023</strong></p><ul id="1c878e0a-8fb0-8093-ba19-c1d870047da8" class="bulleted-list"><li style="list-style-type:disc">Built and deployed a <strong>Volume Forecasting Module</strong> (Prophet + DART) improving pricing prediction by 10% for a global remittance client.</li></ul><ul id="1c878e0a-8fb0-8000-ab12-de945449c48c" class="bulleted-list"><li style="list-style-type:disc">Delivered a <strong>Pricing Heuristics Engine</strong> with SQL/Python workflows, enhancing decision-making speed by 80%.</li></ul><ul id="1c878e0a-8fb0-8046-8e5e-dbe6b0844317" class="bulleted-list"><li style="list-style-type:disc">Created a <strong>Job Statistics Module</strong> for warehouse optimization, improving prediction accuracy by 16% and workforce planning.</li></ul><p id="1c878e0a-8fb0-80da-9721-eae5e48a9bbe" class="">
+</p><h3 id="1c878e0a-8fb0-80dc-ae0c-f4a2b734a582" class="">🔹 <strong>DMI Finance, New Delhi</strong> — <em>Data Scientist</em></h3><p id="1c878e0a-8fb0-8080-af5a-f00a99117ace" class=""><strong>Aug 2019 – Oct 2021</strong></p><ul id="1c878e0a-8fb0-806f-8cda-fc8f1d60b41e" class="bulleted-list"><li style="list-style-type:disc">Designed a <strong>Credit Risk ML Engine</strong> (XGBoost + AWS Lambda) reducing default rates by 35%.</li></ul><ul id="1c878e0a-8fb0-807e-a748-ee80f567e5d2" class="bulleted-list"><li style="list-style-type:disc">Developed a <strong>Maps-enhanced address validation</strong> system using Google Maps—automating over 3M verifications and creating a revenue-generating product.</li></ul><ul id="1c878e0a-8fb0-804f-8496-cc4fd3d750b9" class="bulleted-list"><li style="list-style-type:disc">Engineered a <strong>high-volume data pipeline</strong> (1.5 TB+) on AWS to scale 5 models in parallel, reducing latency and increasing prediction efficiency 10x.</li></ul><p id="1c878e0a-8fb0-80ed-a7ff-df8fb4963bc1" class="">
+</p><h3 id="1c878e0a-8fb0-80e7-ae05-fef344a97945" class="">🔹 <strong>Mahindra &amp; Mahindra, Mumbai</strong> — <em>Assistant Manager (Data Scientist)</em></h3><p id="1c878e0a-8fb0-8032-86a6-cb7379be5478" class=""><strong>June 2016 – Aug 2019</strong></p><ul id="1c878e0a-8fb0-800e-bc6e-db8794d58929" class="bulleted-list"><li style="list-style-type:disc">Built a <strong>Facial Recognition Attendance System</strong> using VGG-16 and TensorFlow—achieving 97% accuracy in live deployment.</li></ul><ul id="1c878e0a-8fb0-8098-822d-cf90c75aa1d0" class="bulleted-list"><li style="list-style-type:disc">Created a <strong>Suspicious User Activity Detection System</strong> by analyzing 150GB ERP logs with PySpark and Naïve Bayes, improving access control and license management.</li></ul><p id="1c878e0a-8fb0-8012-8f90-f09bdb68624b" class="">
+</p><p id="1c878e0a-8fb0-8031-a7a9-c4d48d3e74ab" class="">
+</p><hr id="1c878e0a-8fb0-80fd-a4c5-d7c218ed3d07"/><h2 id="1c878e0a-8fb0-80cc-9e79-d9c91cf67520" class="">🛠️ Skills &amp; Toolset</h2><p id="1c878e0a-8fb0-8011-af17-e6ed139e6660" class="">
+</p><p id="1c878e0a-8fb0-8069-a630-d5c2cdb98912" class=""><strong>Programming Languages</strong></p><p id="1c878e0a-8fb0-8080-a77f-e2ddc28ed2f0" class="">Python, Shell, SQL, Rust, Golang</p><p id="1c878e0a-8fb0-80a2-85c7-c43805222e8c" class="">
+</p><p id="1c878e0a-8fb0-80bc-97d3-ed9774b00feb" class=""><strong>Machine Learning &amp; Deep Learning Toolings</strong></p><p id="1c878e0a-8fb0-80b0-97c8-ca45a048d18f" class="">PyTorch, TensorFlow, Scikit-Learn, HuggingFace, Transformers, Dask, Pyspark, ONNX</p><p id="1c878e0a-8fb0-80ec-992f-cf53d6943379" class="">
+</p><p id="1c878e0a-8fb0-807f-b0ea-d558b3579411" class=""><strong>MLOps &amp; Deployment</strong></p><p id="1c878e0a-8fb0-8097-abb1-c9f1c1058d11" class="">Docker, MLFlow, FastAPI/Flask, Streamlit, LangChain, CI/CD (GitHub Actions)</p><p id="1c878e0a-8fb0-802e-9ec8-c454946115a6" class="">
+</p><p id="1c878e0a-8fb0-806f-a941-efc8048077b1" class=""><strong>Cloud &amp; Databases</strong></p><p id="1c878e0a-8fb0-8007-b923-f45cf0be56c4" class="">AWS (SageMaker, Lambda, S3, EC2, Redshift), GCP (Vertex AI, BigTable), Snowflake, Pinecone, PostgreSQL</p><p id="1c878e0a-8fb0-806d-b302-e52f35730072" class="">
+</p><p id="1c878e0a-8fb0-805c-b9f8-c2bcdb4bfef4" class=""><strong>Specialties</strong></p><p id="1c878e0a-8fb0-80bf-b064-dba2e9866e2b" class="">LLMs, Vector Search, Model Quantization, RAG Pipelines, Multi-GPU Inference, RLHF, Model Distillation</p><p id="1c878e0a-8fb0-80d7-9143-dbdf8f089bc2" class="">
+</p><p id="1c878e0a-8fb0-8087-aa9f-ddc4f33beb90" class=""><strong>Soft Skills</strong></p><p id="1c878e0a-8fb0-80b9-a594-f2ee4d9eb968" class="">Critical Thinking, Project Planning, Vision Execution, Strategic Thinking, Team Leadership, Communication and Problem Solving.</p><p id="1c878e0a-8fb0-8056-928e-e2efa022424c" class="">
+</p><hr id="1c878e0a-8fb0-80b5-993f-c19b974c1c6a"/><h3 id="1c878e0a-8fb0-80d1-9042-f283c4a2d17a" class="">🎓 Education</h3><ul id="1c878e0a-8fb0-80b6-8ae6-e1f3181123f2" class="bulleted-list"><li style="list-style-type:disc"><strong>MCA (Masters in Computer Applications)</strong> — Amity University (2016)</li></ul><ul id="1c878e0a-8fb0-80dc-a701-e5b74c561760" class="bulleted-list"><li style="list-style-type:disc"><strong>BCA (Bachelors in Computer Applications)</strong> — Amity University (2013)</li></ul><p id="1c878e0a-8fb0-80b5-a82d-d70f7fac9e8b" class="">
+</p><hr id="1c878e0a-8fb0-80e8-a961-c0247b2552f1"/><h2 id="1c878e0a-8fb0-80e1-9528-cd1591c8e553" class="">📜 Certifications</h2><ul id="1c878e0a-8fb0-80a9-9800-eeeb3e3c033c" class="bulleted-list"><li style="list-style-type:disc"><strong>Generative Adversarial Networks (GANs)</strong></li></ul><ul id="1c878e0a-8fb0-8010-ac4c-c0e02ad45268" class="bulleted-list"><li style="list-style-type:disc"><strong>Generative AI with Large Language Models</strong></li></ul><ul id="1c878e0a-8fb0-80a8-b1a4-facbe7275a80" class="bulleted-list"><li style="list-style-type:disc"><strong>Deep Learning Specialization – </strong><strong><a href="http://deeplearning.ai/">DeepLearning.ai</a></strong></li></ul><ul id="1c878e0a-8fb0-80ea-8675-dcdbf74f302a" class="bulleted-list"><li style="list-style-type:disc"><strong>TensorFlow in Practice – </strong><strong><a href="http://deeplearning.ai/">DeepLearning.ai</a></strong></li></ul><ul id="1c878e0a-8fb0-80a7-8df7-f626baa316c0" class="bulleted-list"><li style="list-style-type:disc"><strong>Advanced Python Programming</strong></li></ul><hr id="1c878e0a-8fb0-807b-a9e1-ca3a4bad08e8"/><h2 id="1c878e0a-8fb0-80da-832f-ec625a4e9202" class=""></h2><p id="1c878e0a-8fb0-80a8-a6cc-df5f9f75f424" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
